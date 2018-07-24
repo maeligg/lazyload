@@ -2,27 +2,27 @@
     html {
         box-sizing: border-box;
     }
-    
+
     *,
     *:before,
     *:after {
         box-sizing: inherit;
     }
-    
+
     .horzContainer {
         max-width: 100%;
         overflow: auto;
         display: flex;
     }
-    
+
     .item {
         min-width: 200px;
     }
-    
+
     figure {
         margin: 10px;
     }
-    
+
     img {
         width: 200px;
         height: 200px;
@@ -648,24 +648,24 @@
         <figcaption>Lorem ipsum 15</figcaption>
     </figure>
 </div>
-<script src="../dist/lazyload.min.js"></script>
+<script src="../dist/lazyload.js"></script>
 <script>
-(function() {
-    var lazyLoadInstances = [];
-    // The "lazyLazy" instance of lazyload is used (kinda improperly) 
-    // to check when the .horzContainer divs enter the viewport
-    var lazyLazy = new LazyLoad({
-        elements_selector: ".horzContainer",
-        // When the .horzContainer div enters the viewport...
-        callback_set: function(el) {
-            // ...instantiate a new LazyLoad on it
-            var oneLL = new LazyLoad({
-                container: el
-            });
-            // Optionally push it in the lazyLoadInstances 
-            // array to keep track of the instances
-            lazyLoadInstances.push(oneLL);
-        }
-    });
-})();
+    (function () {
+        var lazyLoadInstances = [];
+        // The "lazyLazy" instance of lazyload is used (kinda improperly) 
+        // to check when the .horzContainer divs enter the viewport
+        var lazyLazy = new LazyLoad({
+            elements_selector: ".horzContainer",
+            // When the .horzContainer div enters the viewport...
+            callback_set: function (el) {
+                // ...instantiate a new LazyLoad on it
+                var oneLL = new LazyLoad({
+                    container: el
+                });
+                // Optionally push it in the lazyLoadInstances 
+                // array to keep track of the instances
+                lazyLoadInstances.push(oneLL);
+            }
+        });
+    })();
 </script>

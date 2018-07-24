@@ -261,6 +261,9 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 			this._elements = purgeElements(Array.prototype.slice.call(nodeSet)); // nodeset to array for IE compatibility
 			if (this._observer) {
+				if (!this._observer.observe) {
+					console.warn("The observe method was not found in this._observer", this._observer);
+				}
 				this._elements.forEach(function (element) {
 					_this3._observer.observe(element);
 				});

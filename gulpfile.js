@@ -19,7 +19,7 @@ gulp.task("default", function() {
 			// ----------- rolling up --------------
 			pipe(
 				rollup({
-					output: { name: "LazyLoad", format: "umd" },
+					output: { name: "LazyLoad", format: "amd" },
 					input: "./src/lazyload.js"
 				})
 			).
